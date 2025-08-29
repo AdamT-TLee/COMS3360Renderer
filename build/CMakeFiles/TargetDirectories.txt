@@ -1,0 +1,3 @@
+/Users/adam/CLionProjects/COMS3360Renderer/build/CMakeFiles/COMS3360Renderer.dir
+/Users/adam/CLionProjects/COMS3360Renderer/build/CMakeFiles/edit_cache.dir
+/Users/adam/CLionProjects/COMS3360Renderer/build/CMakeFiles/rebuild_cache.dir
