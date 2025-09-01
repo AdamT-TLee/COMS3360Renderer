@@ -934,16 +934,30 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: /Users/adam/CLionProjects/COMS3360Re
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/camera.h \
   /Users/adam/CLionProjects/COMS3360Renderer/color.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/hittable.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/hittable_list.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/interval.h \
   /Users/adam/CLionProjects/COMS3360Renderer/ray.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/rtweekend.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/sphere.h \
   /Users/adam/CLionProjects/COMS3360Renderer/vec3.h
 
 
 /Users/adam/CLionProjects/COMS3360Renderer/vec3.h:
 
+/Users/adam/CLionProjects/COMS3360Renderer/rtweekend.h:
+
 /Users/adam/CLionProjects/COMS3360Renderer/ray.h:
 
+/Users/adam/CLionProjects/COMS3360Renderer/interval.h:
+
+/Users/adam/CLionProjects/COMS3360Renderer/hittable.h:
+
 /Users/adam/CLionProjects/COMS3360Renderer/color.h:
+
+/Users/adam/CLionProjects/COMS3360Renderer/camera.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h:
 
@@ -1676,6 +1690,8 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: /Users/adam/CLionProjects/COMS3360Re
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__verbose_abort:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/mergeable.h:
+
+/Users/adam/CLionProjects/COMS3360Renderer/sphere.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/result_of.h:
 
@@ -2556,6 +2572,8 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: /Users/adam/CLionProjects/COMS3360Re
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iterator_operations.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_floor.h:
+
+/Users/adam/CLionProjects/COMS3360Renderer/hittable_list.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_callable.h:
 

@@ -6,24 +6,26 @@
 
 class sphere : public hittable {
 public:
-    sphere(const point3& center, double radius) : center(center), radius(std::fmax(0,radius)) {}
+    point3 center;
+    double radius;
+
+    sphere() {}
+    sphere(point3 cen, double r) : center(cen), radius(r) {}
 
     bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
-        vec3 oc = center - r.origin();
-        auto a = r.direction().length_squared();
-        auto h = dot(r.direction(), oc);
-        auto c = oc.length_squared() - radius*radius;
+        vec3 oc = r.origin() - center;
+        auto a = dot(r.direction(), r.direction());
+        auto half_b = dot(oc, r.direction());
+        auto c = dot(oc, oc) - radius*radius;
+        auto discriminant = half_b*half_b - a*c;
 
-        auto discriminant = h*h - a*c;
-        if (discriminant < 0)
-            return false;
+        if (discriminant < 0) return false;
+        auto sqrtd = sqrt(discriminant);
 
-        auto sqrtd = std::sqrt(discriminant);
-
-        // Find the nearest root that lies in the acceptable range.
-        auto root = (h - sqrtd) / a;
+        // Find the nearest root in the acceptable range.
+        auto root = (-half_b - sqrtd) / a;
         if (!ray_t.surrounds(root)) {
-            root = (h + sqrtd) / a;
+            root = (-half_b + sqrtd) / a;
             if (!ray_t.surrounds(root))
                 return false;
         }
@@ -34,10 +36,6 @@ public:
 
         return true;
     }
-
-private:
-    point3 center;
-    double radius;
 };
 
 #endif
