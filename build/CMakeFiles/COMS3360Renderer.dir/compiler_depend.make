@@ -939,6 +939,7 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: /Users/adam/CLionProjects/COMS3360Re
   /Users/adam/CLionProjects/COMS3360Renderer/hittable.h \
   /Users/adam/CLionProjects/COMS3360Renderer/hittable_list.h \
   /Users/adam/CLionProjects/COMS3360Renderer/interval.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/material.h \
   /Users/adam/CLionProjects/COMS3360Renderer/ray.h \
   /Users/adam/CLionProjects/COMS3360Renderer/rtweekend.h \
   /Users/adam/CLionProjects/COMS3360Renderer/sphere.h \
@@ -950,6 +951,8 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: /Users/adam/CLionProjects/COMS3360Re
 /Users/adam/CLionProjects/COMS3360Renderer/rtweekend.h:
 
 /Users/adam/CLionProjects/COMS3360Renderer/ray.h:
+
+/Users/adam/CLionProjects/COMS3360Renderer/material.h:
 
 /Users/adam/CLionProjects/COMS3360Renderer/interval.h:
 
