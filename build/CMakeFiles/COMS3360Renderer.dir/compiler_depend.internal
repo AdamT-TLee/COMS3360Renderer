@@ -11,12 +11,14 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/__wctype.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/__xlocale.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_abort.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_bounds.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_locale.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_mb_cur_max.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_printf.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h
@@ -45,6 +47,7 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/limits.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/signal.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/adjacent_find.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/all_of.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/any_of.h
@@ -935,14 +938,21 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdarg.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h
+ /Users/adam/CLionProjects/COMS3360Renderer/aabb.h
+ /Users/adam/CLionProjects/COMS3360Renderer/bvh.h
  /Users/adam/CLionProjects/COMS3360Renderer/camera.h
  /Users/adam/CLionProjects/COMS3360Renderer/color.h
+ /Users/adam/CLionProjects/COMS3360Renderer/external/stb_image.h
  /Users/adam/CLionProjects/COMS3360Renderer/hittable.h
  /Users/adam/CLionProjects/COMS3360Renderer/hittable_list.h
  /Users/adam/CLionProjects/COMS3360Renderer/interval.h
  /Users/adam/CLionProjects/COMS3360Renderer/material.h
+ /Users/adam/CLionProjects/COMS3360Renderer/perlin.h
+ /Users/adam/CLionProjects/COMS3360Renderer/quad.h
  /Users/adam/CLionProjects/COMS3360Renderer/ray.h
+ /Users/adam/CLionProjects/COMS3360Renderer/rtw_stb_image.h
  /Users/adam/CLionProjects/COMS3360Renderer/rtweekend.h
  /Users/adam/CLionProjects/COMS3360Renderer/sphere.h
+ /Users/adam/CLionProjects/COMS3360Renderer/texture.h
  /Users/adam/CLionProjects/COMS3360Renderer/vec3.h
 

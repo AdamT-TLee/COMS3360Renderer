@@ -939,6 +939,16 @@ CMakeFiles/COMS3360Renderer.dir/main.cpp.o: \
   /Users/adam/CLionProjects/COMS3360Renderer/ray.h \
   /Users/adam/CLionProjects/COMS3360Renderer/camera.h \
   /Users/adam/CLionProjects/COMS3360Renderer/hittable.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/aabb.h \
   /Users/adam/CLionProjects/COMS3360Renderer/material.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/texture.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/rtw_stb_image.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/external/stb_image.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/perlin.h \
   /Users/adam/CLionProjects/COMS3360Renderer/hittable_list.h \
-  /Users/adam/CLionProjects/COMS3360Renderer/sphere.h
+  /Users/adam/CLionProjects/COMS3360Renderer/sphere.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/bvh.h \
+  /Users/adam/CLionProjects/COMS3360Renderer/quad.h
