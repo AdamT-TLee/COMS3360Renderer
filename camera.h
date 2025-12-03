@@ -23,10 +23,10 @@ class camera {
     int    max_depth         = 10;   // Maximum number of ray bounces into scene
     color  background;
 
-    double vfov     = 90;              // Vertical view angle (field of view)
-    point3 lookfrom = point3(0,0,0);   // Point camera is looking from
-    point3 lookat   = point3(0,0,-1);  // Point camera is looking at
-    vec3   vup      = vec3(0,1,0);     // Camera-relative "up" direction
+    double vfov = 90;
+    point3 lookfrom = point3(0, 0, 0);
+    point3 lookat = point3(0, 0, -1);
+    vec3 vup = vec3(0, 1, 0);
 
     double defocus_angle = 0;  // Variation angle of rays through each pixel
     double focus_dist = 10;    // Distance from camera lookfrom point to plane of perfect focus
@@ -71,9 +71,10 @@ class camera {
         center = lookfrom;
 
         // Determine viewport dimensions.
+        //auto focal_length = (lookfrom - lookat).length();
         auto theta = degrees_to_radians(vfov);
-        auto h = std::tan(theta/2);
-        auto viewport_height = 2 * h * focus_dist;
+        auto h = std::tan(theta / 2);
+        auto viewport_height = 2.0 * h * focus_dist;
         auto viewport_width = viewport_height * (double(image_width)/image_height);
 
         // Calculate the u,v,w unit basis vectors for the camera coordinate frame.
