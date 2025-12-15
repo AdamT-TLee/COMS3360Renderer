@@ -8,46 +8,48 @@
 class constant_medium : public hittable {
 public:
     constant_medium(shared_ptr<hittable> boundary, double density, shared_ptr<texture> tex)
-      : boundary(boundary), neg_inv_density(-1/density),
-        phase_function(make_shared<isotropic>(tex))
+      : boundary(boundary), neg_inv_density(-1.0/density),
+        phase_mat(make_shared<isotropic>(tex))
     {}
 
     constant_medium(shared_ptr<hittable> boundary, double density, const color& albedo)
-      : boundary(boundary), neg_inv_density(-1/density),
-        phase_function(make_shared<isotropic>(albedo))
+      : boundary(boundary), neg_inv_density(-1.0/density),
+        phase_mat(make_shared<isotropic>(albedo))
     {}
 
     bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
-        hit_record rec1, rec2;
+        hit_record entry_rec, exit_rec;
 
-        if (!boundary->hit(r, interval::universe, rec1))
+        // Find where ray enters the boundary
+        if (!boundary->hit(r, interval::universe, entry_rec))
             return false;
 
-        if (!boundary->hit(r, interval(rec1.t+0.0001, infinity), rec2))
+        // Find where ray exits the boundary
+        if (!boundary->hit(r, interval(entry_rec.t + 0.0001, infinity), exit_rec))
             return false;
 
-        if (rec1.t < ray_t.min) rec1.t = ray_t.min;
-        if (rec2.t > ray_t.max) rec2.t = ray_t.max;
+        // Clamp to valid ray interval
+        if (entry_rec.t < ray_t.min) entry_rec.t = ray_t.min;
+        if (exit_rec.t > ray_t.max) exit_rec.t = ray_t.max;
 
-        if (rec1.t >= rec2.t)
+        if (entry_rec.t >= exit_rec.t)
             return false;
 
-        if (rec1.t < 0)
-            rec1.t = 0;
+        if (entry_rec.t < 0)
+            entry_rec.t = 0;
 
-        auto ray_length = r.direction().length();
-        auto distance_inside_boundary = (rec2.t - rec1.t) * ray_length;
-        auto hit_distance = neg_inv_density * std::log(random_double());
+        auto ray_len = r.direction().length();
+        auto dist_in_medium = (exit_rec.t - entry_rec.t) * ray_len;
+        auto scatter_dist = neg_inv_density * std::log(random_double());
 
-        if (hit_distance > distance_inside_boundary)
+        if (scatter_dist > dist_in_medium)
             return false;
 
-        rec.t = rec1.t + hit_distance / ray_length;
+        rec.t = entry_rec.t + scatter_dist / ray_len;
         rec.p = r.at(rec.t);
-
-        rec.normal = vec3(1,0,0);  // arbitrary
-        rec.front_face = true;     // also arbitrary
-        rec.mat = phase_function;
+        rec.normal = vec3(1, 0, 0);  // arbitrary direction
+        rec.front_face = true;
+        rec.mat = phase_mat;
 
         return true;
     }
@@ -57,7 +59,7 @@ public:
 private:
     shared_ptr<hittable> boundary;
     double neg_inv_density;
-    shared_ptr<material> phase_function;
+    shared_ptr<material> phase_mat;
 };
 
 #endif

@@ -9,6 +9,7 @@
 #include "texture.h"
 #include "quad.h"
 #include "constant_medium.h"
+#include "OBJloader.h"
 
 void bouncing_spheres() {
     hittable_list world;
@@ -382,8 +383,55 @@ void final_scene(int image_width, int samples_per_pixel, int max_depth) {
     cam.render(world);
 }
 
+void test_obj_loader() {
+    hittable_list world;
+
+    auto checker = make_shared<checker_texture>(0.32, color(.2, .3, .1), color(.9, .9, .9));
+    world.add(make_shared<sphere>(point3(0,-1000,0), 1000, make_shared<lambertian>(checker)));
+
+    try {
+        std::vector<point3> vertices = load_obj("cloud.obj");
+        std::clog << "Loaded " << vertices.size() << " vertices from OBJ file\n";
+        std::clog << "Number of triangles: " << vertices.size() / 3 << "\n";
+
+        auto obj_material = make_shared<lambertian>(color(.65, .05, .05));
+
+        for (size_t i = 0; i + 2 < vertices.size(); i += 3) {
+            point3 v0 = vertices[i];
+            point3 v1 = vertices[i + 1];
+            point3 v2 = vertices[i + 2];
+
+            vec3 u = v1 - v0;
+            vec3 v = v2 - v0;
+
+            world.add(make_shared<triangle>(v0, u, v, obj_material));
+        }
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error loading OBJ file: " << e.what() << "\n";
+        return;
+    }
+    camera cam;
+
+    cam.aspect_ratio      = 16.0 / 9.0;
+    cam.image_width       = 800;
+    cam.samples_per_pixel = 50;
+    cam.max_depth         = 50;
+    cam.background        = color(0.70, 0.80, 1.00);
+
+    cam.vfov     = 40;
+    cam.lookfrom = point3(0, 1, 3);
+    cam.lookat   = point3(0, 1, 0);
+    cam.vup      = vec3(0, 1, 0);
+
+    cam.defocus_angle = 0;
+
+    cam.render(world);
+}
+
+
 int main() {
-    switch (9) {
+    switch (2) {
         case 1:  bouncing_spheres();          break;
         case 2:  checkered_spheres();         break;
         case 3:  earth();                     break;
@@ -393,6 +441,7 @@ int main() {
         case 7:  cornell_box();               break;
         case 8:  cornell_smoke();             break;
         case 9:  final_scene(800, 400, 40); break;
+        case 10: test_obj_loader();           break;
         default: final_scene(400,   250,  4); break;
     }
 }
