@@ -3,8 +3,8 @@ project(COMS3360Renderer)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(COMS3360Renderer main.cpp
-        vec3.h
-        color.h
-        ray.h
+add_executable(COMS3360Renderer src/main.cpp
+        src/vec3.h
+        src/color.h
+        src/ray.h
         )

@@ -390,7 +390,7 @@ void test_obj_loader() {
     world.add(make_shared<sphere>(point3(0, -1000, 0), 1000, make_shared<lambertian>(checker)));
 
     try {
-        std::vector<point3> vertices = load_obj("cloud.obj");
+        std::vector<point3> vertices = load_obj("./cloud.obj");
         std::clog << "Loaded " << vertices.size() << " vertices from OBJ file\n";
         std::clog << "Number of triangles: " << vertices.size() / 3 << "\n";
 
@@ -573,7 +573,7 @@ void ray_tracer_final_image() {
 
     // OBJ model - cloud
     try {
-        std::vector<point3> vertices = load_obj("cloud.obj");
+        std::vector<point3> vertices = load_obj("./cloud.obj");
         std::clog << "Loaded " << vertices.size() << " vertices from OBJ file\n";
         std::clog << "Number of triangles: " << vertices.size() / 3 << "\n";
 
